@@ -4,4 +4,10 @@ El usuario puede ver las reservaciones creadas y poder modificarlas, o eliminarl
 
 La solución consiste en crear un API Rest en Ruby on Rails con los endpoints necesarios para dar respuesta a las funcionalidades descritas; imagina que ese API será usado en el futuro desde una aplicación movil.
 
-Nota: No es necesario tener en cuenta autenticación, ni interfaz Web, HTML, CSS o JS. Probaremos el API usando PostMan o alguna herramienta similar
+# How to init
+Primero instalar dependencias, despues inicializar la base de datos y después opcionalmente usar un seed para probar. Los comandos son los siguientes:
+```
+1. $ bundle install
+2. $ rails db:migrate
+3. $ rails db:seed
+```
