@@ -14,7 +14,7 @@ class AppointmentsController < ApplicationController
         "date(appointment_date_time, 'localtime') = ?", 
         params[:appointment_date_time].to_date
         ).length() === 3
-        return render json: { errors: { appointments: 'Cannot create more that 3 appointments in the same day' }}, status: :forbidden
+        return render json: { errors: { appointments: 'Cannot create more that 3 appointments for the same day' }}, status: :forbidden
       end
       @appointments = Appointment.create(
           client_name: params[:client_name],
@@ -30,7 +30,7 @@ class AppointmentsController < ApplicationController
         "date(appointment_date_time, 'localtime') = ?", 
         params[:appointment_date_time].to_date
         ).length() === 3 && @appointment.appointment_date_time.to_date != params[:appointment_date_time].to_date
-        return render json: { errors: { appointments: 'Cannot update this appointment to this date because there would be more that 3 appointments in the same day' }}, status: :forbidden
+        return render json: { errors: { appointments: 'Cannot update this appointment to this date because there would be more that 3 appointments for the same day' }}, status: :forbidden
       end
 
       @appointment.update(
